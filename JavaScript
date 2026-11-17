@@ -1,0 +1,27 @@
+function startTest(name){
+  alert(name + " - Ye Test Jald Hi Add Ho Jayega. Updates Ke Liye WhatsApp Karen: 0301-3986828");
+}
+function checkAns(ans){
+  let r = document.getElementById('quizResult');
+  if(!r) return;
+  if(ans === 'Hockey'){
+    r.innerHTML = "✅ Bilkul Sahi! Mubarak Ho!";
+    r.style.color = "green";
+  } else {
+    r.innerHTML = "❌ Galat Jawab. Sahi Jawab Hai: Hockey";
+    r.style.color = "red";
+  }
+}
+function sendWhatsApp(){
+  let n = document.getElementById('name').value;
+  let m = document.getElementById('msg').value;
+  let text = "Assalam-o-Alaikum Sir, Mera Naam " + n + " Hai. " + m;
+  window.open("https://wa.me/923013986828?text=" + encodeURIComponent(text), "_blank");
+}
+function filterJobs(){
+  let v = document.getElementById('searchJob').value.toLowerCase();
+  let jobs = document.querySelectorAll('.job-box');
+  jobs.forEach(j => {
+    j.style.display = j.innerText.toLowerCase().includes(v) ? "flex" : "none";
+  });
+    }
